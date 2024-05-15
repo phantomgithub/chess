@@ -5,7 +5,15 @@
 }
 .square
 {
-    height:10vh;
-    width:10vw;
-    
+    height: 5.5rem;
+    width:5.5rem;
+
+}
+#board
+{
+    margin-left:auto;
+    display: grid;
+    grid-template-columns: repeat(8,5.5rem);
+    grid-gap:0;
+    max-width:80vw;;
 }

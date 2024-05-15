@@ -50,7 +50,22 @@ class Square
         }
         const board = new Board();
  
-board.squares.push(new Square('yellow', 'a1', 'path_to_piece_image'));
+    for(let i=0;i<8;i++)
+    {
+        for(let j=0;j<8;j++)
+        {
+            if((i+j)%2==0)
+            {
+            let square=new Square("yellow",`${i*10+j}`,"");
+            board.squares.push(square);
+            }
+            else
+            {
+                let square=new Square("brown",`${i*10+j}`,"");
+                board.squares.push(square);
+            }
+        }
+    }
 
 const boardElement = board.render();
 document.body.appendChild(boardElement);
