@@ -38,9 +38,10 @@ class Square
             {
                 const board=document.createElement('div');
                 board.id="board";
-                this.squares.forEach(squares=>{
-                    squares.render();
-                    board.appendChild(squares);
+                this.squares.forEach(square=>{
+                    
+                    
+                    board.appendChild(square.render());
                 }
 
                 )
