@@ -17,3 +17,11 @@
     grid-gap:0;
     max-width:80vw;;
 }
+.imgPiece
+{
+    height:5.5rem;
+    width:5rem;
+    display: flex;
+    align-items: baseline;
+
+}

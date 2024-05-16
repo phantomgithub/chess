@@ -1,5 +1,5 @@
 
-class Piece 
+export default class Piece 
     {
         constructor(type,color,img,points)
         {
@@ -13,12 +13,14 @@ class Piece
             const piece=document.createElement('div');
             const img=document.createElement('img');
             img.src=this.img;
+            img.className="imgPiece";
             piece.appendChild(img);
             return piece;
 
         }
 
     }
+
 
  
 export const pieces={
