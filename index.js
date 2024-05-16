@@ -1,3 +1,4 @@
+import {pieces} from './piece.js';
 class Square
     {
         constructor(color,index_id,piece)
@@ -20,9 +21,8 @@ class Square
 
             if(this.piece)
             {
-                let pieceImg=document.createElement('img');
-                pieceImg.setAttribute('src',this.piece);
-                div.appendChild(pieceImg);
+            
+                div.appendChild(this.piece);
             }
         return div;
         }
@@ -66,6 +66,7 @@ class Square
             }
         }
     }
-
+board.squares[0].piece=pieces.Wpawn;
 const boardElement = board.render();
+
 document.body.appendChild(boardElement);
