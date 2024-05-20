@@ -7,6 +7,8 @@ export default class Piece
             this.color=color;
             this.img=img;
             this.points=points;
+            this.element = this.init();
+            this.element.addEventListener('click', this.selectPiece.bind(this));
         }
         init()
         {
@@ -17,6 +19,11 @@ export default class Piece
             piece.appendChild(img);
             return piece;
 
+        }
+        selectPiece(event) {
+            // Highlight the selected piece or perform any other actions
+            // You can add more logic here if needed
+            console.log(`Selected ${this.color} ${this.type}`);
         }
 
     }

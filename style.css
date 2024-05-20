@@ -9,13 +9,115 @@
     width:5.5rem;
 
 }
+.white-pawn
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/white-pawn.png');
+background-position: center;
+background-size:contain ;
+}
+.black-pawn
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/black-pawn.png');
+background-position: center;
+background-size:contain ;
+}
+.white-rook
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/white-rook.png');
+background-position: center;
+background-size:contain ;
+}
+.black-rook
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/black-rook.png');
+background-position: center;
+background-size:contain ;
+}
+.white-knight
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/white-knight.png');
+background-position: center;
+background-size:contain ;
+}
+.black-knight
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/black-knight.png');
+background-position: center;
+background-size:contain ;
+}
+.white-bishop
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/white-bishop.png');
+background-position: center;
+background-size:contain ;
+}
+.black-bishop
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/black-bishop.png');
+background-position: center;
+background-size:contain ;
+}
+.white-queen
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/white-queen.png');
+background-position: center;
+background-size:contain ;
+}
+.black-queen
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/black-queen.png');
+background-position: center;
+background-size:contain ;
+}
+.white-king
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/white-king.png');
+background-position: center;
+background-size:contain ;
+}
+.black-king
+{
+height:4.5rem;
+width:4.5rem;
+background-image: url('/chess-pieces/black-king.png');
+background-position: center;
+background-size:contain ;
+}
 #board
 {
+    margin-top:2rem;
     margin-left:auto;
     display: grid;
-    grid-template-columns: repeat(8,5.5rem);
+    grid-template-columns: repeat(8,5rem);
     grid-gap:0;
     max-width:80vw;;
+    height: 80vh;
+}
+.square{
+    height: 5rem;
+    width:5rem;
 }
 .imgPiece
 {
