@@ -9,6 +9,88 @@
     width:5.5rem;
 
 }
+
+.clicked
+{
+    border:3px solid white;
+}
+#board
+{
+    margin-top:2rem;
+    margin-left:auto;
+    display: grid;
+    grid-template-columns: repeat(8,5rem);
+    grid-gap:0;
+    max-width:80vw;;
+    height: 80vh;
+}
+.square{
+    height: 5rem;
+    width:5rem;
+}
+.imgPiece
+{
+    height:5.5rem;
+    width:5rem;
+    display: flex;
+    align-items: baseline;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .white-pawn
 {
 height:4.5rem;
@@ -104,26 +186,4 @@ width:4.5rem;
 background-image: url('/chess-pieces/black-king.png');
 background-position: center;
 background-size:contain ;
-}
-#board
-{
-    margin-top:2rem;
-    margin-left:auto;
-    display: grid;
-    grid-template-columns: repeat(8,5rem);
-    grid-gap:0;
-    max-width:80vw;;
-    height: 80vh;
-}
-.square{
-    height: 5rem;
-    width:5rem;
-}
-.imgPiece
-{
-    height:5.5rem;
-    width:5rem;
-    display: flex;
-    align-items: baseline;
-
 }

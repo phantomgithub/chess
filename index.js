@@ -2,7 +2,8 @@ let pawnsArray= [];
 let body = document.getElementsByTagName('body')[0];
 let boardContainer = document.getElementById('board');
 
-
+let turn = "white";
+let squareClickedLast = "";
 
 function createPiece(team,piece)
 {
@@ -11,6 +12,51 @@ function createPiece(team,piece)
     p.setAttribute('team',team);
     p.classList.add(team+'-'+piece);
     return p;
+}
+function squareClicked(id)
+{
+    id=id.toString();
+    let clickedsquare = document.getElementById(id);
+   
+            if(clickedsquare.children.length!=0 && squareClickedLast =="")
+                {
+                    let children = clickedsquare.children[0];
+                    let pieceColor = children.className.split("-")[0];
+                    let pieceType = children.className.split("-")[1];
+                    if(pieceColor == turn)
+                        {
+                            
+                            squareClickedLast = clickedsquare;//square clicked last will contain last selected square with piece
+                        }
+                    
+                }
+            else if(clickedsquare.children.length!=0 && squareClickedLast !="")
+                {
+                    let targetChild = clickedsquare.children[0];
+                    let targetPieceColor = targetChild.className.split("-")[0];
+                    let currentColor = squareClickedLast.children[0].className.split("-")[0];
+                    if(currentColor!=targetPieceColor)//will have to add a piecewise okay check function to authorize captures
+                        {
+                            clickedsquare.removeChild(targetChild);
+                            clickedsquare.appendChild(squareClickedLast.children[0]);
+                            turn = (turn == "white")?"black":"white";
+                            squareClickedLast="";
+
+                        }
+
+                }
+                else
+                {
+                    if(squareClickedLast!="")
+                        {
+                            clickedsquare.appendChild(squareClickedLast.children[0])
+                            // squareClickedLast.removeChild();
+                            squareClickedLast = "";
+                            turn = (turn == "white")?"black":"white";
+                        }
+                }
+        
+   
 }
 //createBoard function start
 function createBoard()
@@ -27,7 +73,7 @@ for(let i = 1;i<=8;i++)
                     square.style.backgroundColor = 'rgb(116,147,91)';
 
                 square.id = i*10+j;
-                // square.onclick = squareClicked(square.id);
+                // square.setAttribute('onclick',"squareClicked("+square.id+")");
                  
                  boardContainer.appendChild(square);  
 
@@ -36,6 +82,18 @@ for(let i = 1;i<=8;i++)
     }
 
 }
+boardContainer.addEventListener('click', function(event) {
+    let clickedElement = event.target;
+    if (clickedElement.classList.contains('square')) {
+        // Clicked on a square
+        let squareId = clickedElement.id;
+        squareClicked(squareId);
+    } else if (clickedElement.parentElement.classList.contains('square')) {
+        // Clicked on a piece
+        let squareId = clickedElement.parentElement.id;
+        squareClicked(squareId);
+    }
+});
 //createBoard function end
 
 //function to setBoard starts
@@ -100,12 +158,12 @@ let fen='rnbqkbnr/pppppppp/////PPPPPPPP/NBQKBNRR'
             
             square.appendChild(finalpiece);
             
-           console.log(square.id+" with the piece "+team+"-"+piece);
         
            
         }
 }
-}
+}//end of setBoard
+
 createBoard();
 setBoard();
 
@@ -115,7 +173,6 @@ setBoard();
 
    
    
-    let compBoard=[["","","","","","","",""],["","","","","","","",""],["","","","","","","",""],["","","","","","","",""],["","","","","","","",""],["","","","","","","",""],["","","","","","","",""],["","","","","","","",""]];
 
    
    
